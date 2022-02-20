@@ -11,8 +11,7 @@ const addItem = function () {
   deleteItem.textContent = "Delete";
   if (input.value.length > 0) {
     item.textContent = input.value;
-    list.appendChild(item);
-    list.appendChild(deleteItem);
+    list.append(item, deleteItem);
     input.value = "";
   }
   // Add class done
