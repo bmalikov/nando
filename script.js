@@ -7,16 +7,23 @@ const item = document.querySelector("li");
 
 const addItem = function () {
   const item = document.createElement("li");
-  const deleteItem = document.createElement("button");
-  deleteItem.textContent = "Delete";
+  const btnDelete = document.createElement("button");
+  btnDelete.textContent = "Delete";
   if (input.value.length > 0) {
     item.textContent = input.value;
-    list.append(item, deleteItem);
+    list.appendChild(item);
+    list.appendChild(btnDelete);
     input.value = "";
   }
   // Add class done
   item.addEventListener("click", function () {
     item.classList.toggle("done");
+  });
+
+  // Delete item
+  btnDelete.addEventListener("click", function () {
+    item.remove();
+    btnDelete.remove();
   });
 };
 
